@@ -1,0 +1,56 @@
+{
+  "name": "find_store",
+  "version": "0.0.1",
+  "description": "CLI app that can find the nearest store to a given parameter",
+  "main": "dist/index.js",
+  "bin": {
+    "find_store": "bin/find_store"
+  },
+  "scripts": {
+    "debug": "webpack --progress --colors --watch --config webpack.config.js",
+    "build": "webpack --progress --colors --config webpack.config.js",
+    "test:unit": "jest"
+  },
+  "author": "Bill Glesias",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^24.0.14",
+    "@types/node": "^12.0.2",
+    "csv-loader": "^3.0.2",
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "jest-html-reporter": "^2.5.0",
+    "lint-staged": "^8.2.1",
+    "papaparse": "^4.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "arg": "^4.1.0",
+    "csvtojson": "^2.0.8",
+    "esm": "^3.2.25"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest-html-reporter": {
+    "outputPath": "test/reports/unit/index.html"
+  }
+}
