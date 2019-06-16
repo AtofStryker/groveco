@@ -7,8 +7,8 @@
     "find_store": "bin/find_store"
   },
   "scripts": {
-    "debug": "webpack --progress --colors --watch --config webpack.config.js",
-    "build": "webpack --progress --colors --config webpack.config.js",
+    "debug": "webpack --progress --colors --watch --config webpack.config.js --mode development",
+    "build": "webpack --progress --colors --config webpack.config.js --mode production",
     "test:unit": "jest"
   },
   "author": "Bill Glesias",

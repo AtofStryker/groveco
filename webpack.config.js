@@ -1,15 +1,12 @@
 const path = require("path")
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require("dotenv-webpack")
 
 module.exports = env => {
   return {
-    devtool: 'source-map',
-    entry: path.resolve(__dirname,"./src/index.ts"),
-    mode: "development",
+    devtool: "source-map",
+    entry: path.resolve(__dirname, "./src/index.ts"),
     target: "node",
-    plugins: [
-      new Dotenv()
-    ],
+    plugins: [new Dotenv()],
     module: {
       rules: [
         {
@@ -19,18 +16,18 @@ module.exports = env => {
         },
         {
           test: /\.csv$/,
-          loader: 'csv-loader',
+          loader: "csv-loader",
           options: {
             dynamicTyping: true,
             header: true,
-            skipEmptyLines: true
-          }
-        }
+            skipEmptyLines: true,
+          },
+        },
       ],
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname,"./src"),
+        "@": path.resolve(__dirname, "./src"),
       },
       extensions: [".tsx", ".ts", ".js", ".json"],
     },
@@ -38,8 +35,8 @@ module.exports = env => {
       filename: "index.js",
 
       path: path.resolve(__dirname, "dist"),
-      libraryTarget: 'umd',
-      globalObject: 'this'
-    }
+      libraryTarget: "umd",
+      globalObject: "this",
+    },
   }
 }
